@@ -19,6 +19,10 @@ public class Tasks {
                 System.out.println("Enter N:");
                 task2(inInt(br));
                 break;
+            case 3:
+                System.out.println("Enter the coordinates of point A1 (ax1,ay1,ax2,ay2) and B1 (bx1,by1,bx2,by2):");
+                task3(inInt(br), inInt(br), inInt(br), inInt(br), inInt(br), inInt(br), inInt(br), inInt(br));
+                break;
             default:
                 System.out.print("\nEntered data is incorrect!");
                 break;
@@ -63,6 +67,16 @@ public class Tasks {
             System.out.print(fibonacci(i) + "\t");
             i++;
         }
+    }
+
+    static void task3(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        double v1 = (bx2 - bx1) * (ay1 - by1) - (by2 - by1) * (ax1 - bx1);
+        double v2 = (bx2 - bx1) * (ay2 - by1) - (by2 - by1) * (ax2 - bx1);
+        double v3 = (ax2 - ax1) * (by1 - ay1) - (ay2 - ay1) * (bx1 - ax1);
+        double v4 = (ax2 - ax1) * (by2 - ay1) - (ay2 - ay1) * (bx2 - ax1);
+
+        String s = ((v1 * v2 <= 0) && (v3 * v4 <= 0)) ? "Yes, the segments intersect" : "No, the segments don't intersect";
+        System.out.print(s);
     }
 
     static int fibonacci(int n) {
