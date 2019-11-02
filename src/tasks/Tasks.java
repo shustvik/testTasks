@@ -8,24 +8,18 @@ public class Tasks {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in, "Cp1251"));
-        boolean b = true;
-        do {
-            System.out.println("Please enter task number (1, 2, 3, 4, 5, 6) or enter '0' to complete the program:");
-            int task = inInt(br);
-            switch (task) {
-                case 1:
-                    System.out.println("Enter N:");
-                    task1(inInt(br));
-                    break;
-                case 0:
-                    b = false;
-                    break;
-                default:
-                    System.out.print("\nEntered data is incorrect!");
-                    break;
-            }
-            System.out.println("\n");
-        } while (b);
+        System.out.println("Please enter task number (1, 2, 3, 4, 5, 6) or enter '0' to complete the program:");
+        int task = inInt(br);
+        switch (task) {
+            case 1:
+                System.out.println("Enter N:");
+                task1(inInt(br));
+                break;
+            default:
+                System.out.print("\nEntered data is incorrect!");
+                break;
+        }
+        System.out.println("\n");
     }
 
     static int inInt(BufferedReader br) throws IOException {
