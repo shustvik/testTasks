@@ -27,6 +27,10 @@ public class Tasks {
                 System.out.println("Enter a and b :");
                 task4(inInt(br), inInt(br));
                 break;
+            case 5:
+                System.out.println("Enter the string:");
+                task5(inString(br));
+                break;
             default:
                 System.out.print("\nEntered data is incorrect!");
                 break;
@@ -88,6 +92,14 @@ public class Tasks {
         System.out.print("LCM(" + a + "," + b + ") = " + lcm(a, b));
     }
 
+    static void task5(String str) {
+        if (isPalindrome(str)) {
+            System.out.print("Yes, it's a palindrome");
+        } else {
+            System.out.print("No, it's not a palindrome");
+        }
+    }
+
     static int fibonacci(int n) {
         if (n == 0 || n == 1) {
             return n;
@@ -105,6 +117,18 @@ public class Tasks {
 
     static int lcm(int a, int b) {
         return a / gcd(a, b) * b;
+    }
+
+    static boolean isPalindrome(String str) {
+        int i = 0, j = str.length() - 1;
+        while (i < j) {
+            if (str.charAt(i) != str.charAt(j)) {
+                return false;
+            }
+            i++;
+            j--;
+        }
+        return true;
     }
 
 }
