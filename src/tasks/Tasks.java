@@ -31,6 +31,10 @@ public class Tasks {
                 System.out.println("Enter the string:");
                 task5(inString(br));
                 break;
+            case 6:
+                System.out.println("Enter the string:");
+                task6(inString(br));
+                break;
             default:
                 System.out.print("\nEntered data is incorrect!");
                 break;
@@ -98,6 +102,25 @@ public class Tasks {
         } else {
             System.out.print("No, it's not a palindrome");
         }
+    }
+
+    static void task6(String str) {
+        StringBuilder strBuild = new StringBuilder(str);
+        int i = 0;
+        int strBLeng = strBuild.capacity() - 16;
+        while (i < strBLeng) {
+            if (strBuild.charAt(i) >= 48 && strBuild.charAt(i) <= 57) {
+                strBuild.deleteCharAt(i);
+                if (i == strBLeng - 1) {
+                    break;
+                } else {
+                    strBLeng--;
+                }
+            } else {
+                i++;
+            }
+        }
+        System.out.print("Edited string: " + strBuild.toString());
     }
 
     static int fibonacci(int n) {
