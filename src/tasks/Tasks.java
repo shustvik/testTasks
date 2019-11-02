@@ -23,6 +23,10 @@ public class Tasks {
                 System.out.println("Enter the coordinates of point A1 (ax1,ay1,ax2,ay2) and B1 (bx1,by1,bx2,by2):");
                 task3(inInt(br), inInt(br), inInt(br), inInt(br), inInt(br), inInt(br), inInt(br), inInt(br));
                 break;
+            case 4:
+                System.out.println("Enter a and b :");
+                task4(inInt(br), inInt(br));
+                break;
             default:
                 System.out.print("\nEntered data is incorrect!");
                 break;
@@ -79,6 +83,11 @@ public class Tasks {
         System.out.print(s);
     }
 
+    static void task4(int a, int b) {
+        System.out.print("GCD(" + a + "," + b + ") = " + gcd(a, b) + "\n");
+        System.out.print("LCM(" + a + "," + b + ") = " + lcm(a, b));
+    }
+
     static int fibonacci(int n) {
         if (n == 0 || n == 1) {
             return n;
@@ -86,4 +95,16 @@ public class Tasks {
             return fibonacci(n - 1) + fibonacci(n - 2);
         }
     }
+
+    static int gcd(int a, int b) {
+        if (b != 0) {
+            return a > b ? gcd(b, a % b) : gcd(a, b % a);
+        }
+        return a;
+    }
+
+    static int lcm(int a, int b) {
+        return a / gcd(a, b) * b;
+    }
+
 }
