@@ -15,6 +15,10 @@ public class Tasks {
                 System.out.println("Enter N:");
                 task1(inInt(br));
                 break;
+            case 2:
+                System.out.println("Enter N:");
+                task2(inInt(br));
+                break;
             default:
                 System.out.print("\nEntered data is incorrect!");
                 break;
@@ -49,6 +53,23 @@ public class Tasks {
                 }
             }
             i++;
+        }
+    }
+
+    static void task2(int n) {
+        int i = 1;
+        System.out.println("Fibonacci numbers in range 1 to " + n + ":");
+        while (i <= n) {
+            System.out.print(fibonacci(i) + "\t");
+            i++;
+        }
+    }
+
+    static int fibonacci(int n) {
+        if (n == 0 || n == 1) {
+            return n;
+        } else {
+            return fibonacci(n - 1) + fibonacci(n - 2);
         }
     }
 }
